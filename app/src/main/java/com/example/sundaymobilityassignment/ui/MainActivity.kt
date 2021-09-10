@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         this.supportActionBar!!.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
         supportActionBar!!.setDisplayShowCustomEnabled(true)
         supportActionBar!!.setCustomView(R.layout.custom_action_bar)
-        supportActionBar!!.hideOffset = supportActionBar!!.height
     }
 
     fun toggleDarkMode(view: View) {
