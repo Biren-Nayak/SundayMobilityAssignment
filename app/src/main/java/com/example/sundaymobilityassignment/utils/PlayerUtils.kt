@@ -24,7 +24,6 @@ fun Context.jsonParse(country: String): MutableLiveData<List<Player>> {
             val flag = try {
                 players.getJSONObject(playerIndex).getBoolean("captain")
             }catch (e: Exception){
-                Toast.makeText(this, "Cannot fetch the captain value of $name", Toast.LENGTH_LONG).show()
                 false
             }
             val nameList: List<String> =

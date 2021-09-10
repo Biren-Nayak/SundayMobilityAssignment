@@ -39,7 +39,6 @@ class CountryAdapter: RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
         holder.binding.firstName.text = item
 
         holder.binding.layout.setOnClickListener {
-            Toast.makeText(it.context, "Country: ${differ.currentList[position]}", Toast.LENGTH_LONG).show()
             holder.binding.root.findNavController()
                 .navigate(HomeFragmentDirections.actionHomeFragmentToPlayersFragment(differ.currentList[position]))
         }

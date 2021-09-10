@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
-        android:layout_margin="8dp">
+        android:layout_margin="8dp"
+        android:outlineSpotShadowColor="?attr/colorOnSecondary">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,12 +26,12 @@
                 android:layout_height="30dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/text_background"
-                android:backgroundTint="@color/design_default_color_secondary"
+                android:backgroundTint="?attr/colorAccent"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:gravity="center_vertical|center_horizontal"
                 android:text=""
                 android:visibility="gone"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/first_name"

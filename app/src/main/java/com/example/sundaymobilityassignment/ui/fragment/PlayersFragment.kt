@@ -1,15 +1,15 @@
 package com.example.sundaymobilityassignment.ui.fragment
 
-import android.graphics.Color
-import android.graphics.Color.*
-import android.graphics.drawable.ColorDrawable
+import android.content.res.ColorStateList
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.RoundedBitmapDrawable
 import androidx.fragment.app.Fragment
+import com.example.sundaymobilityassignment.R
 import com.example.sundaymobilityassignment.utils.Constants.sortList
 import com.example.sundaymobilityassignment.databinding.FragmentPlayersBinding
 import com.example.sundaymobilityassignment.classes.Player
@@ -34,19 +34,51 @@ class PlayersFragment: Fragment() {
             playerList = players
             updateList(adapter, players)
         })
+        val oldColors = binding.firstName.textColors
 
 
         binding.firstNameCard.setOnClickListener {
+            val colors = updateButtons(it, binding.firstName)
             updateList(adapter, sortList(playerList))
-            binding.firstNameCard.setCardBackgroundColor(DKGRAY)
-            binding.lastNameCard.setCardBackgroundColor(TRANSPARENT)
+            binding.lastName.setTextColor(oldColors)
+            binding.lastNameCard.backgroundTintList = colors[1]
         }
         binding.lastNameCard.setOnClickListener {
+            val colors = updateButtons(it, binding.lastName)
             updateList(adapter, sortList(playerList, false))
-            binding.lastNameCard.setCardBackgroundColor(DKGRAY)
-            binding.firstNameCard.setCardBackgroundColor(TRANSPARENT)
+            binding.firstName.setTextColor(oldColors)
+            binding.firstNameCard.backgroundTintList = colors[1]
         }
+
         return binding.root
+    }
+
+    private fun updateButtons(it: View, text: TextView): List<ColorStateList?> {
+        val colors = buttonColor()
+        text.setTextColor(ContextCompat.getColor(requireContext(), R.color.design_default_color_on_primary))
+        it.backgroundTintList = colors[0]
+        return colors
+    }
+
+    private fun buttonColor() = when (activity?.resources!!.configuration.uiMode and
+            Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES) {
+        true -> {
+            listOf<ColorStateList?>(
+                ColorStateList.valueOf(ContextCompat.getColor(requireContext(),
+                    R.color.design_default_color_secondary)),
+                ColorStateList.valueOf(ContextCompat.getColor(requireContext(),
+                    R.color.cardview_dark_background))
+            )
+        }
+        else -> {
+            listOf<ColorStateList?>(
+                ColorStateList.valueOf(ContextCompat.getColor(requireContext(),
+                    R.color.sun)),
+                ColorStateList.valueOf(ContextCompat.getColor(requireContext(),
+                    R.color.cardview_light_background))
+            )
+
+        }
     }
 
     private fun updateList(

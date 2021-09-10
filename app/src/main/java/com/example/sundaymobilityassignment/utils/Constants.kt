@@ -2,6 +2,7 @@ package com.example.sundaymobilityassignment.utils
 
 import com.example.sundaymobilityassignment.classes.Player
 
+
 object Constants {
     const val JSONUrl = "https://test.oye.direct/players"
 

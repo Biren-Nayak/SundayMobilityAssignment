@@ -23,19 +23,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraint" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sort_text"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/constraint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint"
             android:layout_width="match_parent"
@@ -46,7 +33,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/first_name_card"
@@ -54,7 +41,6 @@
                 android:layout_height="50dp"
                 android:layout_margin="8dp"
                 android:layout_marginStart="20dp"
-                app:cardBackgroundColor="#00ffffff"
                 app:cardCornerRadius="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/last_name_card"
@@ -66,9 +52,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:checked="false"
+                    android:fontFamily="sans-serif-condensed-medium"
                     android:text="First Name"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -79,7 +66,6 @@
                 android:layout_height="50dp"
                 android:layout_margin="8dp"
                 android:layout_marginEnd="20dp"
-                app:cardBackgroundColor="#00ffffff"
                 app:cardCornerRadius="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +77,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:checked="false"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-condensed-medium"
                     android:text="Last Name"
                     android:textAlignment="center" />
 

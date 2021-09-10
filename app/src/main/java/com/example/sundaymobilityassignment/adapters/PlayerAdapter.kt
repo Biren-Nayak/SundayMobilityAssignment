@@ -1,16 +1,13 @@
 package com.example.sundaymobilityassignment.adapters
 
-import android.graphics.Color
 import android.view.LayoutInflater
-import android.view.View
-import android.view.View.*
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sundaymobilityassignment.R
 import com.example.sundaymobilityassignment.classes.Player
 import com.example.sundaymobilityassignment.databinding.ItemViewBinding
 
