@@ -9,7 +9,6 @@
         android:background="?attr/colorOnPrimary"
         xmlns:tools="http://schemas.android.com/tools"
         android:elevation="10dp"
-        app:contentInsetStart="0dp"
         android:outlineSpotShadowColor="?attr/colorOnSecondary"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
