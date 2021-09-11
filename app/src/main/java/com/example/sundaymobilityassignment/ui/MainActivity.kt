@@ -3,13 +3,10 @@ package com.example.sundaymobilityassignment.ui
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
-import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContextCompat
+import androidx.appcompat.widget.Toolbar
 import com.example.sundaymobilityassignment.R
 
 
@@ -17,9 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        this.supportActionBar!!.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
-        supportActionBar!!.setDisplayShowCustomEnabled(true)
-        supportActionBar!!.setCustomView(R.layout.custom_action_bar)
+        supportActionBar!!.hide()
+        //supportActionBar!!.setCustomView(R.layout.custom_action_bar)
     }
 
     fun toggleDarkMode(view: View) {
